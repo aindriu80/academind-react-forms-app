@@ -9,31 +9,9 @@ body {
   margin: 3rem auto;
 }
 
-/* .form-control {
-  margin-bottom: 1rem;
-}
-
-.form-control input,
-.form-control label {
-  display: block;
-}
-
-.form-control label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.form-control input,
-.form-control select {
-  font: inherit;
-  padding: 0.5rem;
-  width: 20rem;
-  max-width: 100%;
-}
-
 .form-control input:focus {
   outline: none;
-} */
+}
 
 .control-group {
   display: flex;
@@ -44,14 +22,6 @@ body {
 .control-group .form-control {
   min-width: 15rem;
   flex: 1;
-}
-
-.form-actions {
-  /* text-align: right; */
-}
-
-.form-actions button {
-  /* margin-left: 1rem; */
 }
 
 .invalid input {
