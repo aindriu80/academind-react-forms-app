@@ -9,7 +9,9 @@ const SimpleInput = (props) => {
   const enteredNameIsValid = enteredName.trim() !== ''
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched
 
-  const enteredEmailIsValid = enteredEmail.trim()
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/
+
+  const enteredEmailIsValid = enteredEmail.match(emailRegex)
   const emailInputIsInvalid = !enteredEmailIsValid && enteredEmailTouched
 
   let formIsValid = false
@@ -50,9 +52,16 @@ const SimpleInput = (props) => {
     // nameInputRef.current.value = ''; => Not ideal - manipulating DOM
     setEnteredName('')
     setEnteredNameTouched(false)
+
+    setEnteredEmail('')
+    setEnteredEmailTouched(false)
   }
 
   const nameInputClasses = nameInputIsInvalid
+    ? 'form-control invalid'
+    : 'form-control'
+
+  const emailInputClasses = emailInputIsInvalid
     ? 'form-control invalid'
     : 'form-control'
 
@@ -70,7 +79,9 @@ const SimpleInput = (props) => {
         {nameInputIsInvalid && (
           <p className="error-text">Name must not be empty!</p>
         )}
+      </div>
 
+      <div className={emailInputClasses}>
         <label htmlFor="email">Your email</label>
         <input
           type="text"
@@ -80,7 +91,7 @@ const SimpleInput = (props) => {
           value={enteredEmail}
         />
         {emailInputIsInvalid && (
-          <p className="error-text">Email must not be empty!</p>
+          <p className="error-text">Email must be valid!</p>
         )}
       </div>
       <div className="form-actions">
