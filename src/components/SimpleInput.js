@@ -9,7 +9,8 @@ const SimpleInput = (props) => {
     reset: resetNameInput,
     inputBlurHandler: nameBlurHandler,
   } = useInput((value) => value.trim() !== '')
-
+  //eslint-disable-next-line
+  //eslint-disable-next-line
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/
 
   const {
